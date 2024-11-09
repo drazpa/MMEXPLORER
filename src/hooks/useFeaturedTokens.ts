@@ -1,0 +1,27 @@
+<command>// Update the mock data to include more tokens for the 4x4 grid
+const mockFeaturedTokens = Array.from({ length: 16 }, (_, i) => ({
+  id: `token-${i + 1}`,
+  currency: `TOKEN${i + 1}`,
+  symbol: `TKN${i + 1}`,
+  issuer: `r${Array(33).fill(0).map(() => Math.random().toString(36)[2]).join('')}`,
+  name: `Token ${i + 1}`,
+  priceUSD: Math.random() * 10,
+  priceXRP: Math.random() * 5,
+  volume24h: Math.random() * 1000000,
+  volume7d: Math.random() * 5000000,
+  marketCap: Math.random() * 10000000,
+  supply: Math.random() * 100000000,
+  holders: Math.floor(Math.random() * 10000),
+  trustlines: Math.floor(Math.random() * 12000),
+  exchanges24h: Math.floor(Math.random() * 2000),
+  exchanges7d: Math.floor(Math.random() * 10000),
+  takers24h: Math.floor(Math.random() * 1000),
+  takers7d: Math.floor(Math.random() * 5000),
+  change24h: (Math.random() * 20) - 10,
+  change7d: (Math.random() * 40) - 20,
+  change1h: (Math.random() * 5) - 2.5,
+  featuredType: 'featured',
+  socialLink: 'https://example.com',
+  featuredDate: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000),
+  dexOffers: Math.floor(Math.random() * 200)
+}));</command>

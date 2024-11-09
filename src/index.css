@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base theme transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Performance optimizations */
+.contain-paint {
+  contain: paint;
+}
+
+.contain-layout {
+  contain: layout;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Glow Effects */
+.glow-effect {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    60deg,
+    rgba(59, 130, 246, 0.2),
+    rgba(37, 99, 235, 0.2)
+  );
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Button Glow */
+.button-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.button-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.dark .button-glow:hover {
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+/* Card Glow */
+.card-glow {
+  transition: all 0.3s ease;
+}
+
+.card-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+}
+
+.dark .card-glow:hover {
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.15);
+}
+
+/* Logo Animation */
+.logo-coins {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Gradient Animation */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
